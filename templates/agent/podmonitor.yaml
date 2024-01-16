@@ -11,11 +11,6 @@ spec:
   - targetPort: 8080
     scheme: http
     path: /metrics
-    bearerTokenSecret:
-      name: "prometheus-token"
-      key: "token"
-    tlsConfig:
-      insecureSkipVerify: true
     relabelings:
     - regex: endpoint|namespace|pod|container
       action: labeldrop
